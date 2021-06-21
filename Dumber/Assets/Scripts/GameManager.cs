@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
         answerB.text = currentQeustion.answerB;
 
     }
+
+    //sorular arası bekleme yapmayı denedim ancak yemedi bir bakılır buraya
     //IEnumerator TransitionToNextQuestion()
     //{
     //    SetQuestion();
