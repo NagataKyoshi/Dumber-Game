@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     int randomQuestionID; //need for random question but we need to change primary.
 
     [SerializeField]
-    private float timeBetweenQuestions = 4f;
+    private float timeBetweenQuestions = 20f;
 
     private void Start()
     {
@@ -32,16 +32,17 @@ public class GameManager : MonoBehaviour
         questionText.text = currentQeustion.question;
         answerA.text = currentQeustion.answerA;
         answerB.text = currentQeustion.answerB;
-
     }
 
-    //sorular arası bekleme yapmayı denedim ancak yemedi bir bakılır buraya
-    //IEnumerator TransitionToNextQuestion()
-    //{
-    //    SetQuestion();
-    //    yield return new WaitForSeconds(timeBetweenQuestions);
-    //    //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    //}
+    IEnumerator TransitionToNextQuestion()
+    {
+        
+        Debug.Log("Üstünde");
+        yield return new WaitForSeconds(timeBetweenQuestions);
+
+        SetQuestion();
+        Debug.Log("işlem tamamlandı");
+    }
 
     public void SetAnswer(string correctAnswer)
     {
@@ -51,16 +52,14 @@ public class GameManager : MonoBehaviour
             Debug.Log("Congrats");
             //add particle system
             //add audio
-            SetQuestion();
         }
         else
         {
             Debug.Log("Wrong");
             //add particle system
             //add audio
-            SetQuestion();
         }
-        //StartCoroutine(TransitionToNextQuestion());
-
+        StartCoroutine(TransitionToNextQuestion());
     }
+
 }
