@@ -4,6 +4,9 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Tabtale.TTPlugins;
+using TMPro;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +26,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SetQuestion();
+        isScoreCalculated = false;
+
     }
     public void SetQuestion()
     {
@@ -61,5 +66,73 @@ public class GameManager : MonoBehaviour
         }
         StartCoroutine(TransitionToNextQuestion());
     }
+    
+    private bool isScoreCalculated;
+
+
+    public GameObject StartScreen;
+    public GameObject FinishScreen;
+    public GameObject GameOverScreen;
+
+
+    public static GameManager inst;
+    
+    public enum PlayerState
+    {
+        Prepare,
+        Playing,
+        Died,
+        Shopping,
+        Finish
+    }
+
+    public PlayerState playerState;
+    
+    
+
+    private void Awake()
+    {
+        TTPCore.Setup();
+        
+
+        playerState = PlayerState.Prepare;
+        Application.targetFrameRate = 60;
+    }
+
+    
+    void Update()
+    {
+        if (playerState == PlayerState.Prepare)
+        {
+            StartScreen.SetActive(true);
+
+        }
+
+        if (playerState == PlayerState.Finish)
+        {
+
+
+            FinishScreen.SetActive(true);
+            
+        }
+
+        if (playerState == PlayerState.Died)
+        {
+            GameOverScreen.SetActive(true);
+        }
+    }
+ 
+
+   
+    
+    IEnumerator WaitAfterSeconds(int seconds, GameObject obj)
+    {
+        yield return new WaitForSeconds(seconds);
+        obj.SetActive(true);
+    }
+
+   
+    
+    
 
 }

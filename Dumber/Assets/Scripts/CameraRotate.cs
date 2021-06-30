@@ -10,14 +10,24 @@ public class CameraRotate : MonoBehaviour
     public GameObject playersCamera;
     private CinemachineVirtualCamera camera;
     public GameObject[] target;
+    public GameManager gameMng;
 
-    public GameObject answerA, answerB;
+    private Button buttonA, buttonB, buttonC, buttonD;
+
+    public GameObject answerA, answerB, answerC, answerD;
     public int i;
     
     // Start is called before the first frame update
     void Start()
     {
         camera = playersCamera.gameObject.GetComponent<CinemachineVirtualCamera>();
+        buttonA = answerA.GetComponent<Button>();
+
+
+    }
+
+    public void StartGameForCamera()
+    {
         i = 2;
 
         RotateCam();
@@ -55,6 +65,10 @@ public class CameraRotate : MonoBehaviour
     {
         answerA.SetActive(false);
         answerB.SetActive(false);
+        answerC.SetActive(false);
+        answerD.SetActive(false);
+
+        
         questionCanvas.SetActive(false);
         
         yield return new WaitForSeconds(3);         //spikerde kamera
@@ -70,15 +84,30 @@ public class CameraRotate : MonoBehaviour
         yield return new WaitForSeconds(3);         //AIda
         answerA.SetActive(true);
         answerB.SetActive(true);
+        answerC.SetActive(true);
+        answerD.SetActive(true);
+
         yield return new WaitForSeconds(1);         //AIda
+        
         int random = Random.Range(0,2);
         switch (random)
         {
             case 0:
                 //answerA.GetComponent<Image>().material.Lerp();
+                //buttonA.colors.normalColor = Color.red;
+                
+                ColorBlock cb = buttonA.colors;
+                cb.normalColor = Color.red;
+                buttonA.colors = cb;
+
                 break;
             case 1:
                // answerB.GetComponent<Image>().material.color = Color.white;
+               
+               ColorBlock cba = buttonA.colors;
+               cba.normalColor = Color.red;
+               buttonA.colors = cba;
+               
                 break;
         }
         
