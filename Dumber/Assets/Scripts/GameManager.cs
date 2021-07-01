@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 {
     public List<Question> questions;
     public Question currentQeustion;
+    public ParticleSystem[] confetti;
+    public CameraRotate cameraScript;
 
     [SerializeField]
     public Text questionText;
@@ -54,12 +56,22 @@ public class GameManager : MonoBehaviour
         questions.RemoveAt(randomQuestionID);
         if (correctAnswer == currentQeustion.trueAnswer)
         {
+            cameraScript.IfTrueAnswer();
             Debug.Log("Congrats");
             //add particle system
             //add audio
+            foreach (var particles in confetti)
+            {
+
+                particles.Play();
+                
+            }
+            
+            
         }
         else
         {
+            cameraScript.RotateCam();
             Debug.Log("Wrong");
             //add particle system
             //add audio
@@ -121,6 +133,8 @@ public class GameManager : MonoBehaviour
             GameOverScreen.SetActive(true);
         }
     }
+    
+    
  
 
    
