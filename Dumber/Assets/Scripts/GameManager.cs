@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     public Text questionText;
     public Text answerA;
     public Text answerB;
+    public Text answerC;
+    public Text answerD;
+
 
     int randomQuestionID; //need for random question but we need to change primary.
 
@@ -39,6 +42,8 @@ public class GameManager : MonoBehaviour
         questionText.text = currentQeustion.question;
         answerA.text = currentQeustion.answerA;
         answerB.text = currentQeustion.answerB;
+        answerC.text = currentQeustion.answerC;
+        answerD.text = currentQeustion.answerD;
     }
 
     IEnumerator TransitionToNextQuestion()

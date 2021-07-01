@@ -3407,6 +3407,8 @@ MonoBehaviour:
   questionText: {fileID: 1971624543}
   answerA: {fileID: 946678099}
   answerB: {fileID: 1012269836}
+  answerC: {fileID: 1023338784}
+  answerD: {fileID: 1879675834}
   timeBetweenQuestions: 5
   StartScreen: {fileID: 8739595704202484731}
   FinishScreen: {fileID: 0}
