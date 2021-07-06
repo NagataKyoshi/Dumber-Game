@@ -7,7 +7,7 @@ public class Question
     public string answerA;
     public string answerB;
     public string answerC;
-    public string answerD;
+    //public string answerD;
 
     
     public string trueAnswer;

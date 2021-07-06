@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public CameraRotate cameraScript;
 
     [SerializeField]
-    public Text questionText;
+    public TextMeshProUGUI questionText;
     public Text answerA;
     public Text answerB;
     public Text answerC;

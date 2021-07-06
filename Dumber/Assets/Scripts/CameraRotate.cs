@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +16,9 @@ public class CameraRotate : MonoBehaviour
     public GameManager gameMng;
     public ColorBlock aBackup, bBackup;
     public GameObject[] text;
+    public TextMeshProUGUI yourTurnText;
+    public TextMeshProUGUI questionText;
+
 
     public Slider slider;
  
@@ -28,6 +33,8 @@ public class CameraRotate : MonoBehaviour
         camera = playersCamera.gameObject.GetComponent<CinemachineVirtualCamera>();
         buttonA = answerA.GetComponent<Button>();
         buttonB = answerB.GetComponent<Button>();
+        DOTweenTMPAnimator doTweenAnimator = new DOTweenTMPAnimator(yourTurnText);
+        
 
         aBackup = buttonA.colors;
         bBackup = buttonB.colors;
@@ -99,7 +106,7 @@ public class CameraRotate : MonoBehaviour
     {
         //yield return new WaitForSeconds(2);
         //slider.value = Mathf.Lerp(slider.value, slider.value + 1f, 0.5f);
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
 
         foreach (var part in gameMng.confetti)
         {
@@ -111,6 +118,15 @@ public class CameraRotate : MonoBehaviour
     
     IEnumerator WaitForSeconds()
     {
+        //zquestionCanvas.SetActive(false);
+        questionCanvas.transform.DOScale(0, 1);
+
+        yourTurnText.DOScale(0, 1);
+        answerA.transform.DOScale(0, 1);
+        answerB.transform.DOScale(0, 1);
+        answerC.transform.DOScale(0, 1);
+        yield return new WaitForSeconds(1);         //spikerde kamera
+
         answerA.SetActive(false);
         answerB.SetActive(false);
         answerC.SetActive(false);
@@ -122,14 +138,18 @@ public class CameraRotate : MonoBehaviour
         //answerD.GetComponent<Button>().interactable = false;
         beetleJuice.SetBool("isTurn",false);
 
+        yield return new WaitForSeconds(1);         //spikerde kamera
+
+        //questionCanvas.SetActive(true);
+        questionCanvas.transform.DOScale(1, 1);
+
+        questionText.DOText(gameMng.currentQeustion.question, 1, true,ScrambleMode.Lowercase);
         
-        questionCanvas.SetActive(false);
-        
-        yield return new WaitForSeconds(3);         //spikerde kamera
+        yield return new WaitForSeconds(2);         //spikerde kamera
 
         howard.SetBool("isTurn",false);
 
-        questionCanvas.SetActive(true);
+        //questionCanvas.SetActive(true);
         playersCamera.SetActive(true);
         
         i = 0;
@@ -138,16 +158,22 @@ public class CameraRotate : MonoBehaviour
 
         
         yield return new WaitForSeconds(3);         //AIda
+        
         answerA.SetActive(true);
         answerB.SetActive(true);
         answerC.SetActive(true);
+        
+        answerA.transform.DOScale(1, 2);
+        answerB.transform.DOScale(1, 2);
+        answerC.transform.DOScale(1, 2);
+
+        
         //answerD.SetActive(true);
 
 
         yield return new WaitForSeconds(1);         //AIda
-        
-        
-        
+
+        //transform.DOScale(yourTurnText.gameObject.transform.localScale, Vector3.one, 2f);
         int random = Random.Range(0,2);
         switch (random)
         {
@@ -178,13 +204,19 @@ public class CameraRotate : MonoBehaviour
             text.gameObject.SetActive(true);
         }
         
+
+        
         yield return new WaitForSeconds(3); //AIda
+        
+        yourTurnText.DOScale(1, 1);
+
         
         garyTheRetard.SetBool("isTurn",false);
         
         beetleJuice.SetBool("isTurn",true);
 
 
+        
         switch (random)
         {
             case 0:
