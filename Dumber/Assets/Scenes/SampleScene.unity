@@ -3896,21 +3896,21 @@ MonoBehaviour:
   - question: What number comes between 2 and 4?
     answerA: 3
     answerB: 36
-    answerC: 1.6
-    answerD: Nugget
-    trueAnswer: b
-  - question: What number comes between 2 and 4?
-    answerA: 3
-    answerB: 25
-    answerC: 
+    answerC: 25
     answerD: 
     trueAnswer: b
-  - question: Merhabalar bu 3 sorudur
-    answerA: "merhabalar bu a \u015F\u0131kk\u0131"
-    answerB: "merhabalar bu b \u015F\u0131kk\u0131"
-    answerC: 
+  - question: Spell R-E-D
+    answerA: B-E-D
+    answerB: L-S-T-R
+    answerC: R-E-D
     answerD: 
-    trueAnswer: a
+    trueAnswer: b
+  - question: 2+2 equals to?
+    answerA: 4
+    answerB: 44
+    answerC: Coffee Mug
+    answerD: 
+    trueAnswer: b
   - question: Merhabalar bu 4 sorudur
     answerA: "merhabalar bu a \u015F\u0131kk\u0131"
     answerB: "merhabalar bu b \u015F\u0131kk\u0131"
