@@ -36,14 +36,14 @@ public class GameManager : MonoBehaviour
     }
     public void SetQuestion()
     {
-        randomQuestionID = Random.Range(0, 1); //questions.Count - 1); random yapılmak istenirse
+        randomQuestionID = Random.Range(0, questions.Count); //questions.Count - 1); random yapılmak istenirse
         currentQeustion = questions[randomQuestionID];
 
         questionText.text = currentQeustion.question;
         answerA.text = currentQeustion.answerA;
         answerB.text = currentQeustion.answerB;
         answerC.text = currentQeustion.answerC;
-        answerD.text = currentQeustion.answerD;
+        //answerD.text = currentQeustion.answerD;
     }
 
     IEnumerator TransitionToNextQuestion()
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     public void SetAnswer(string correctAnswer)
     {
-        questions.RemoveAt(randomQuestionID);
+        //questions.RemoveAt(randomQuestionID); /// soruyu siliyor
         if (correctAnswer == currentQeustion.trueAnswer)
         {
             cameraScript.IfTrueAnswer();

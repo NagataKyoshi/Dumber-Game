@@ -14,6 +14,8 @@ public class CameraRotate : MonoBehaviour
     public GameManager gameMng;
     public ColorBlock aBackup, bBackup;
     public GameObject[] text;
+
+    public Slider slider;
  
     private Button buttonA, buttonB, buttonC, buttonD;
 
@@ -43,6 +45,10 @@ public class CameraRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if (slider.value < slider.maxValue - 0.2f)
+        // {
+        //     gameMng.playerState = GameManager.PlayerState.Finish;
+        // }
         
         //  rotateX += 0.1f;
         // transform.eulerAngles = new Vector3(0,rotateX,0);
@@ -71,12 +77,30 @@ public class CameraRotate : MonoBehaviour
     public void IfTrueAnswer()
     {
         StartCoroutine(Delay());
+        StartCoroutine(DelaySlider());
 
+    }
+    
+    IEnumerator DelaySlider()
+    {
+
+        for (int j = 0; j < 100; j++)
+        {
+
+            slider.value += 0.01f;
+            yield return new WaitForSeconds(0.01f);
+
+        }
+        
+       
     }
 
     IEnumerator Delay()
     {
+        //yield return new WaitForSeconds(2);
+        //slider.value = Mathf.Lerp(slider.value, slider.value + 1f, 0.5f);
         yield return new WaitForSeconds(4);
+
         foreach (var part in gameMng.confetti)
         {
             part.Stop();
@@ -90,12 +114,12 @@ public class CameraRotate : MonoBehaviour
         answerA.SetActive(false);
         answerB.SetActive(false);
         answerC.SetActive(false);
-        answerD.SetActive(false);
+       // answerD.SetActive(false);
 
         buttonA.interactable = false;
         buttonB.interactable = false;
         answerC.GetComponent<Button>().interactable = false;
-        answerD.GetComponent<Button>().interactable = false;
+        //answerD.GetComponent<Button>().interactable = false;
         beetleJuice.SetBool("isTurn",false);
 
         
@@ -117,7 +141,7 @@ public class CameraRotate : MonoBehaviour
         answerA.SetActive(true);
         answerB.SetActive(true);
         answerC.SetActive(true);
-        answerD.SetActive(true);
+        //answerD.SetActive(true);
 
 
         yield return new WaitForSeconds(1);         //AIda
@@ -180,7 +204,7 @@ public class CameraRotate : MonoBehaviour
         answerA.GetComponent<Button>().interactable = true;
         answerB.GetComponent<Button>().interactable = true;
         answerC.GetComponent<Button>().interactable = true;
-        answerD.GetComponent<Button>().interactable = true;
+        //answerD.GetComponent<Button>().interactable = true;
         howard.SetBool("isTurn",true);
 
         RotateCam();
