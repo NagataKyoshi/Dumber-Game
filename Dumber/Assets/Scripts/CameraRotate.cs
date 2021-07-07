@@ -20,7 +20,7 @@ public class CameraRotate : MonoBehaviour
     public TextMeshProUGUI yourTurnText;
     public TextMeshProUGUI questionText;
 
-    public CinemachineVirtualCamera garyCam, beetleCam, howardCam;
+    public CinemachineVirtualCamera garyCam, beetleCam, howardCam,startCam;
 
 
     public Slider slider;
@@ -37,7 +37,7 @@ public class CameraRotate : MonoBehaviour
         buttonA = answerA.GetComponent<Button>();
         buttonB = answerB.GetComponent<Button>();
         DOTweenTMPAnimator doTweenAnimator = new DOTweenTMPAnimator(yourTurnText);
-        
+        howard.SetBool("isTurn",true);
 
         aBackup = buttonA.colors;
         bBackup = buttonB.colors;
@@ -47,21 +47,20 @@ public class CameraRotate : MonoBehaviour
     public void StartGameForCamera()
     {
         i = 2;
-        howard.SetBool("isTurn",true);
 
-        RotateCam();
+        StartCoroutine(StartCo());
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if (slider.value < slider.maxValue - 0.2f)
-        // {
-        //     gameMng.playerState = GameManager.PlayerState.Finish;
-        // }
+         if (slider.value > slider.maxValue - 0.2f)
+         {
+            gameMng.playerState = GameManager.PlayerState.Finish;
+            beetleJuice.SetBool("isHappy",true);
+         }
         
-        //  rotateX += 0.1f;
-        // transform.eulerAngles = new Vector3(0,rotateX,0);
     }
 
     public void RotateCam()
@@ -115,6 +114,19 @@ public class CameraRotate : MonoBehaviour
 
     }
     
+    
+    IEnumerator StartCo()
+    {
+
+        //starcam
+
+        startCam.enabled = false;
+        RotateCam();
+
+        yield return new WaitForSeconds(0f);
+       
+    }
+    
     IEnumerator DelaySlider()
     {
 
@@ -152,6 +164,7 @@ public class CameraRotate : MonoBehaviour
         answerA.transform.DOScale(0, 1);
         answerB.transform.DOScale(0, 1);
         answerC.transform.DOScale(0, 1);
+
         yield return new WaitForSeconds(1);         //spikerde kamera
 
         answerA.SetActive(false);
@@ -164,6 +177,7 @@ public class CameraRotate : MonoBehaviour
         answerC.GetComponent<Button>().interactable = false;
         //answerD.GetComponent<Button>().interactable = false;
         beetleJuice.SetBool("isTurn",false);
+        gameMng.SetQuestion();
 
         yield return new WaitForSeconds(1);         //spikerde kamera
 
@@ -174,7 +188,7 @@ public class CameraRotate : MonoBehaviour
         
         yield return new WaitForSeconds(2);         //spikerde kamera
 
-        howard.SetBool("isTurn",false);
+        //howard.SetBool("isTurn",false);
 
         //questionCanvas.SetActive(true);
         playersCamera.SetActive(true);
@@ -198,7 +212,7 @@ public class CameraRotate : MonoBehaviour
         //answerD.SetActive(true);
 
 
-        yield return new WaitForSeconds(1);         //AIda
+        yield return new WaitForSeconds(2.5f);         //AIda
 
         //transform.DOScale(yourTurnText.gameObject.transform.localScale, Vector3.one, 2f);
         int random = Random.Range(0,2);
@@ -213,15 +227,39 @@ public class CameraRotate : MonoBehaviour
                 ColorBlock cb = buttonA.colors;
                 cb.disabledColor = Color.red;
                 buttonA.colors = cb;
+                
+                foreach (var text in text)
+                {
+                    text.GetComponent<TextMeshPro>().text = answerA.GetComponentInChildren<Text>().text;
+                }
 
                 break;
             case 1:
                // answerB.GetComponent<Image>().material.color = Color.white;
 
                 bBackup = buttonB.colors;
-                ColorBlock cba = buttonA.colors;
+                ColorBlock cba = buttonB.colors;
                 cba.disabledColor = Color.red;
-                buttonA.colors = cba;
+                buttonB.colors = cba;
+               
+               foreach (var text in text)
+               {
+                   text.GetComponent<TextMeshPro>().text = answerB.GetComponentInChildren<Text>().text;
+               }
+               
+                break;
+            case 2:
+                // answerB.GetComponent<Image>().material.color = Color.white;
+
+                bBackup = buttonC.colors;
+                ColorBlock ccc = buttonC.colors;
+                ccc.disabledColor = Color.red;
+                buttonC.colors = ccc;
+               
+                foreach (var text in text)
+                {
+                    text.GetComponent<TextMeshPro>().text = answerB.GetComponentInChildren<Text>().text;
+                }
                
                 break;
         }

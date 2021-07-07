@@ -48,17 +48,15 @@ public class GameManager : MonoBehaviour
     IEnumerator TransitionToNextQuestion()
     {
         
-        Debug.Log("Üstünde");
         yield return new WaitForSeconds(timeBetweenQuestions);
 
         SetQuestion();
-        Debug.Log("işlem tamamlandı");
     }
 
     public void SetAnswer(string correctAnswer)
     {
         //questions.RemoveAt(randomQuestionID); /// soruyu siliyor
-        if (correctAnswer == currentQeustion.trueAnswer)
+        if (correctAnswer != currentQeustion.trueAnswer)
         {
             cameraScript.IfTrueAnswer();
             Debug.Log("Congrats");
@@ -80,7 +78,7 @@ public class GameManager : MonoBehaviour
             //add particle system
             //add audio
         }
-        StartCoroutine(TransitionToNextQuestion());
+        //StartCoroutine(TransitionToNextQuestion());
     }
     
     private bool isScoreCalculated;
