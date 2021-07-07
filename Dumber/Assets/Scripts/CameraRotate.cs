@@ -77,7 +77,7 @@ public class CameraRotate : MonoBehaviour
         {
             case 0:
                 garyCam.enabled = true;
-                howardCam.enabled = false;
+                howardCam.enabled = false; 
                 beetleCam.enabled = false;
                 break;
             case 1:
@@ -230,7 +230,7 @@ public class CameraRotate : MonoBehaviour
                 
                 foreach (var text in text)
                 {
-                    text.GetComponent<TextMeshPro>().text = answerA.GetComponentInChildren<Text>().text;
+                    //text.GetComponent<TextMeshProUGUI>().text = answerA.GetComponentInChildren<Text>().text;
                 }
 
                 break;
@@ -244,7 +244,7 @@ public class CameraRotate : MonoBehaviour
                
                foreach (var text in text)
                {
-                   text.GetComponent<TextMeshPro>().text = answerB.GetComponentInChildren<Text>().text;
+                   //text.GetComponent<TextMeshProUGUI>().text = answerB.GetComponentInChildren<Text>().text;
                }
                
                 break;
@@ -258,7 +258,7 @@ public class CameraRotate : MonoBehaviour
                
                 foreach (var text in text)
                 {
-                    text.GetComponent<TextMeshPro>().text = answerB.GetComponentInChildren<Text>().text;
+                    //text.GetComponent<TextMeshProUGUI>().text = answerB.GetComponentInChildren<Text>().text;
                 }
                
                 break;

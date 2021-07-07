@@ -17,9 +17,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     public TextMeshProUGUI questionText;
-    public Text answerA;
-    public Text answerB;
-    public Text answerC;
+    public TextMeshProUGUI answerA;
+    public TextMeshProUGUI answerB;
+    public TextMeshProUGUI answerC;
 
 
     int randomQuestionID; //need for random question but we need to change primary.
