@@ -22,9 +22,9 @@ public class CameraRotate : MonoBehaviour
 
     public Slider slider;
  
-    private Button buttonA, buttonB, buttonC, buttonD;
+    private Button buttonA, buttonB, buttonC;
 
-    public GameObject answerA, answerB, answerC, answerD;
+    public GameObject answerA, answerB, answerC;
     public int i;
     
     // Start is called before the first frame update
@@ -140,7 +140,7 @@ public class CameraRotate : MonoBehaviour
 
         yield return new WaitForSeconds(1);         //spikerde kamera
 
-        //questionCanvas.SetActive(true);
+        questionCanvas.SetActive(true);
         questionCanvas.transform.DOScale(1, 1);
 
         questionText.DOText(gameMng.currentQeustion.question, 1, true,ScrambleMode.Lowercase);

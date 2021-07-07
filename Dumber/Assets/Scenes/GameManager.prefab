@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1377211132690455255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1377211132690455253}
+  - component: {fileID: 1377211132690455254}
+  - component: {fileID: 1377211132690455252}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1377211132690455253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377211132690455255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 404.50604, y: 172.02512, z: -0.89227295}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1377211132690455254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377211132690455255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07967c3c45f506409155674620ab964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questions:
+  - question: What number comes between 2 and 4?
+    answerA: 3
+    answerB: 36
+    answerC: 25
+    trueAnswer: b
+  - question: Spell R-E-D
+    answerA: B-E-D
+    answerB: L-S-T-R
+    answerC: R-E-D
+    trueAnswer: b
+  - question: 2+2 equals to?
+    answerA: 4
+    answerB: 44
+    answerC: Coffee Mug
+    trueAnswer: b
+  - question: Merhabalar bu 4 sorudur
+    answerA: "merhabalar bu a \u015F\u0131kk\u0131"
+    answerB: "merhabalar bu b \u015F\u0131kk\u0131"
+    answerC: 
+    trueAnswer: a
+  currentQeustion:
+    question: 
+    answerA: 
+    answerB: 
+    answerC: 
+    trueAnswer: 
+  confetti:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  cameraScript: {fileID: 1377211132690455252}
+  questionText: {fileID: 0}
+  answerA: {fileID: 0}
+  answerB: {fileID: 0}
+  answerC: {fileID: 0}
+  answerD: {fileID: 0}
+  timeBetweenQuestions: 4
+  StartScreen: {fileID: 0}
+  FinishScreen: {fileID: 0}
+  GameOverScreen: {fileID: 0}
+  playerState: 0
+--- !u!114 &1377211132690455252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377211132690455255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a17d84a66ac9be4c92fe309b35a8f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beetleJuice: {fileID: 0}
+  garyTheRetard: {fileID: 0}
+  howard: {fileID: 0}
+  questionCanvas: {fileID: 0}
+  playersCamera: {fileID: 0}
+  target:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  gameMng: {fileID: 1377211132690455254}
+  aBackup:
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 0}
+    m_SelectedColor: {r: 0, g: 0, b: 0, a: 0}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0}
+    m_ColorMultiplier: 0
+    m_FadeDuration: 0
+  bBackup:
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 0}
+    m_SelectedColor: {r: 0, g: 0, b: 0, a: 0}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0}
+    m_ColorMultiplier: 0
+    m_FadeDuration: 0
+  text:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  yourTurnText: {fileID: 0}
+  questionText: {fileID: 0}
+  slider: {fileID: 0}
+  answerA: {fileID: 0}
+  answerB: {fileID: 0}
+  answerC: {fileID: 0}
+  answerD: {fileID: 0}
+  i: 0

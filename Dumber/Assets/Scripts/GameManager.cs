@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
     public Text answerA;
     public Text answerB;
     public Text answerC;
-    public Text answerD;
 
 
     int randomQuestionID; //need for random question but we need to change primary.
