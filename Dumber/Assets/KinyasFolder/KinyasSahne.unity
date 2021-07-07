@@ -548,6 +548,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeakerCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 8068795652648256189, guid: 67df381342aaab642a01cca8ec9a9f21, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67df381342aaab642a01cca8ec9a9f21, type: 3}
 --- !u!1 &541289987
@@ -566,7 +570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &541289988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -674,7 +678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5035147255515170501, guid: 4e67421f4ad607b4281e422419f5d483, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e67421f4ad607b4281e422419f5d483, type: 3}
@@ -721,6 +725,18 @@ PrefabInstance:
       propertyPath: answerC
       value: 
       objectReference: {fileID: 1800083393}
+    - target: {fileID: 1377211132690455252, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
+      propertyPath: garyCam
+      value: 
+      objectReference: {fileID: 1048680464}
+    - target: {fileID: 1377211132690455252, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
+      propertyPath: beetleCam
+      value: 
+      objectReference: {fileID: 1956962631}
+    - target: {fileID: 1377211132690455252, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
+      propertyPath: howardCam
+      value: 
+      objectReference: {fileID: 1762726649}
     - target: {fileID: 1377211132690455252, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
       propertyPath: beetleJuice
       value: 

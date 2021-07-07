@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Cinemachine;
 using DG.Tweening;
 using TMPro;
@@ -18,6 +19,8 @@ public class CameraRotate : MonoBehaviour
     public GameObject[] text;
     public TextMeshProUGUI yourTurnText;
     public TextMeshProUGUI questionText;
+
+    public CinemachineVirtualCamera garyCam, beetleCam, howardCam;
 
 
     public Slider slider;
@@ -63,12 +66,36 @@ public class CameraRotate : MonoBehaviour
 
     public void RotateCam()
     {
-        if (i == 2)
+        // if (i == 2)
+        // {
+        //     beetleCam.enabled = false;
+        //         StartCoroutine(WaitForSeconds());
+        // }else{     
+        //     camera.LookAt = target[i].transform;
+        // }
+
+        switch (i)
         {
-                playersCamera.SetActive(false);
+            case 0:
+                garyCam.enabled = true;
+                howardCam.enabled = false;
+                beetleCam.enabled = false;
+                break;
+            case 1:
+                
+                beetleCam.enabled = true;
+                howardCam.enabled = false;
+                garyCam.enabled = false;
+
+                break;
+            case 2:
+                howardCam.enabled = true;
+                beetleCam.enabled = false;
+                garyCam.enabled = false;
                 StartCoroutine(WaitForSeconds());
-        }else{     
-            camera.LookAt = target[i].transform;
+
+                break;
+                
         }
         
         //camera.LookAt = target[i].transform;
