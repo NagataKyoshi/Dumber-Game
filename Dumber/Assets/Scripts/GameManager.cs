@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
         
 
         playerState = PlayerState.Prepare;
-        Application.targetFrameRate = 60;
+        //Application.targetFrameRate = 60;
     }
 
     
