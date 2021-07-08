@@ -1064,6 +1064,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6797263469393709205}
     - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
+      propertyPath: questions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
       propertyPath: timeBetweenQuestions
       value: 1
       objectReference: {fileID: 0}
@@ -1091,6 +1095,34 @@ PrefabInstance:
       propertyPath: confetti.Array.data[5]
       value: 
       objectReference: {fileID: 1772660381}
+    - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
+      propertyPath: questions.Array.data[1].answerB
+      value: R-E-D
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
+      propertyPath: questions.Array.data[1].answerC
+      value: L-S-T-R
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
+      propertyPath: questions.Array.data[2].answerB
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
+      propertyPath: questions.Array.data[2].answerC
+      value: Pizza
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
+      propertyPath: questions.Array.data[0].trueAnswer
+      value: a
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
+      propertyPath: questions.Array.data[1].trueAnswer
+      value: b
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
+      propertyPath: questions.Array.data[2].trueAnswer
+      value: a
+      objectReference: {fileID: 0}
     - target: {fileID: 1377211132690455255, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -4996,8 +5028,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 114.8
-  m_fontSizeBase: 114.8
+  m_fontSize: 155
+  m_fontSizeBase: 155
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5006,7 +5038,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -3.54
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -5801,7 +5833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1532dd968e262d341a484550ae3bceb0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4b05bf9c46735d643bf79cc79e59a31b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
