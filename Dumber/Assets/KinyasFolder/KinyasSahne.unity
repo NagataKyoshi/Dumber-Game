@@ -1096,28 +1096,40 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1772660381}
     - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
+      propertyPath: questions.Array.data[0].answerC
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
       propertyPath: questions.Array.data[1].answerA
-      value: 
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
       propertyPath: questions.Array.data[1].answerB
-      value: 
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
       propertyPath: questions.Array.data[1].answerC
-      value: 
+      value: Thursday
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
+      propertyPath: questions.Array.data[2].answerA
+      value: Red
       objectReference: {fileID: 0}
     - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
       propertyPath: questions.Array.data[2].answerB
-      value: 3
+      value: Pink
       objectReference: {fileID: 0}
     - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
       propertyPath: questions.Array.data[2].answerC
-      value: Pizza
+      value: Blue
       objectReference: {fileID: 0}
     - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
       propertyPath: questions.Array.data[1].question
-      value: 
+      value: How many days are in a week?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
+      propertyPath: questions.Array.data[2].question
+      value: What color is a fire engine?
       objectReference: {fileID: 0}
     - target: {fileID: 1377211132690455254, guid: fa2103f41d756f24ea761746865e4e68, type: 3}
       propertyPath: questions.Array.data[0].trueAnswer
