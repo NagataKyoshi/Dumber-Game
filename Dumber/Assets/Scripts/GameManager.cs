@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     public void SetAnswer(string correctAnswer)
     {
-        //questions.RemoveAt(randomQuestionID); /// soruyu siliyor
+        questions.RemoveAt(randomQuestionID); /// soruyu siliyor
         if (correctAnswer != currentQeustion.trueAnswer)
         {
             cameraScript.IfTrueAnswer();

@@ -215,7 +215,7 @@ public class CameraRotate : MonoBehaviour
         yield return new WaitForSeconds(2.5f);         //AIda
 
         //transform.DOScale(yourTurnText.gameObject.transform.localScale, Vector3.one, 2f);
-        int random = Random.Range(0,2);
+        int random = 0;//Random.Range(0,2);
         switch (random)
         {
             case 0:
@@ -234,7 +234,7 @@ public class CameraRotate : MonoBehaviour
                 }
 
                 break;
-            case 1:
+            /*case 1:
                // answerB.GetComponent<Image>().material.color = Color.white;
 
                 bBackup = buttonB.colors;
@@ -261,7 +261,7 @@ public class CameraRotate : MonoBehaviour
                     //text.GetComponent<TextMeshProUGUI>().text = answerB.GetComponentInChildren<Text>().text;
                 }
                
-                break;
+                break;*/
         }
 
         foreach (var text in text)
