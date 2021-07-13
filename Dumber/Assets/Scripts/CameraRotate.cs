@@ -6,6 +6,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Debug = UnityEngine.Debug;
 
 public class CameraRotate : MonoBehaviour
 {
@@ -17,9 +18,9 @@ public class CameraRotate : MonoBehaviour
     public GameManager gameMng;
     public ColorBlock aBackup, bBackup;
     public GameObject[] text;
-    public TextMeshProUGUI yourTurnText;
+    public TextMeshProUGUI yourTurnText,yourTurnText2;
     public TextMeshProUGUI questionText;
-
+    public bool isEnded;
     public CinemachineVirtualCamera garyCam, beetleCam, howardCam,startCam;
 
 
@@ -57,8 +58,13 @@ public class CameraRotate : MonoBehaviour
     {
          if (slider.value > slider.maxValue - 0.2f)
          {
-            gameMng.playerState = GameManager.PlayerState.Finish;
-            beetleJuice.SetBool("isHappy",true);
+             Debug.Log("seo ");
+             gameMng.playerState = GameManager.PlayerState.Finish;
+             isEnded = true;
+             beetleJuice.SetBool("isHappy",true);
+             StartCoroutine(DelayEnd());
+             
+             
          }
         
     }
@@ -109,6 +115,7 @@ public class CameraRotate : MonoBehaviour
 
     public void IfTrueAnswer()
     {
+        
         StartCoroutine(Delay());
         StartCoroutine(DelaySlider());
 
@@ -130,10 +137,10 @@ public class CameraRotate : MonoBehaviour
     IEnumerator DelaySlider()
     {
 
-        for (int j = 0; j < 100; j++)
+        for (int j = 0; j < 50; j++)
         {
 
-            slider.value += 0.01f;
+            slider.value += 0.02f;
             yield return new WaitForSeconds(0.01f);
 
         }
@@ -143,17 +150,38 @@ public class CameraRotate : MonoBehaviour
 
     IEnumerator Delay()
     {
+        if (!isEnded)
+        {
+            yield return new WaitForSeconds(2);// sevınme kısımı
+            Debug.Log("gırdı");
+            foreach (var part in gameMng.confetti)
+            {
+                part.Stop();
+            }
+            RotateCam();
+        }
+        else
+        {
+           
+        }
         //yield return new WaitForSeconds(2);
         //slider.value = Mathf.Lerp(slider.value, slider.value + 1f, 0.5f);
-        yield return new WaitForSeconds(3);
+        
+    }
+    
+    
+    IEnumerator DelayEnd()
+    {
+        //yield return new WaitForSeconds(2);
+        //slider.value = Mathf.Lerp(slider.value, slider.value + 1f, 0.5f);
+        yield return new WaitForSeconds(15);// sevınme kısımı
 
         foreach (var part in gameMng.confetti)
         {
             part.Stop();
         }
-        RotateCam();
+        //RotateCam();
     }
-    
     
     IEnumerator WaitForSeconds()
     {
@@ -161,6 +189,7 @@ public class CameraRotate : MonoBehaviour
         questionCanvas.transform.DOScale(0, 1);
 
         yourTurnText.DOScale(0, 1);
+        yourTurnText2.DOScale(0, 1);
         answerA.transform.DOScale(0, 1);
         answerB.transform.DOScale(0, 1);
         answerC.transform.DOScale(0, 1);
@@ -273,7 +302,9 @@ public class CameraRotate : MonoBehaviour
         
         yield return new WaitForSeconds(3); //AIda
         
+
         yourTurnText.DOScale(1, 1);
+        yourTurnText2.DOScale(1, 1);
 
         
         garyTheRetard.SetBool("isTurn",false);

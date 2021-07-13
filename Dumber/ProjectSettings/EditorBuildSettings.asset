@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/KinyasFolder/KinyasSahne.unity
+    path: Assets/KinyasFolder/snapchat.unity
     guid: ef13981523a467c47b968e4a1bcaad47
   m_configObjects: {}

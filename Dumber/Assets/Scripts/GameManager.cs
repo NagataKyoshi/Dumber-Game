@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI answerA;
     public TextMeshProUGUI answerB;
     public TextMeshProUGUI answerC;
+    public int question= 0;
 
 
     int randomQuestionID; //need for random question but we need to change primary.
@@ -58,8 +59,12 @@ public class GameManager : MonoBehaviour
         questions.RemoveAt(randomQuestionID); /// soruyu siliyor
         if (correctAnswer != currentQeustion.trueAnswer)
         {
+            question++;
+            if (question == 2)
+            {
+                cameraScript.isEnded = true;
+            }
             cameraScript.IfTrueAnswer();
-            Debug.Log("Congrats");
             //add particle system
             //add audio
             foreach (var particles in confetti)
